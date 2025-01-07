@@ -17,7 +17,6 @@ public class BMI_Rechner {
 		double bmi = gewicht / (groesse * groesse);
 		double gerunderterBmi = IO.round(bmi * 100.0, 0) / 100.0;
 		IO.writeln(name + ", dein BMI beträgt " + gerunderterBmi);
-
 	}
 
 }
