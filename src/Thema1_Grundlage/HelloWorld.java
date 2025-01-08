@@ -1,6 +1,8 @@
 package Thema1_Grundlage;
 
 public class HelloWorld {
-	geiowg
+public static void main(String[] args) {
+		System.out.println("Hello World!");
+		}
 
 }
