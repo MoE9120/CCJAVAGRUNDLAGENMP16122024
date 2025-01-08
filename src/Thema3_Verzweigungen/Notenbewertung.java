@@ -16,9 +16,9 @@ public class Notenbewertung {
 			System.out.println("gut");
 		} else if (note >= 2.5 && note < 3.4) {
 			System.out.println("befriedigend");
-		} else if (note >= 3.4 && note < 4.0) {
+		} else if (note >= 3.4 && note < 4.1) {
 			System.out.println("ausreichend");
-		} else if (note >= 4.1 && note < 5.0) {
+		} else if (note >= 4.1 && note < 5.1) {
 			System.out.println("Nicht bestanden");
 		} else {
 			System.out.println("Ungültige Note");
