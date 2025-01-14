@@ -1,11 +1,11 @@
 package oop_thema1_bank;
 
 public class Kunde {
-	
+
 	private String kundenID;
-	
+
 	private String name;
-	
+
 	private String adresse;
 
 	// Konstruktor

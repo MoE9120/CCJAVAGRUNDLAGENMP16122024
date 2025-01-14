@@ -1,6 +1,6 @@
 package Thema4_Schleifen;
 
-public class EinacheProgrammierung {
+public class EinfacheProgrammierung {
 
 	public static void main(String[] args) {
 //		int i = 0;
