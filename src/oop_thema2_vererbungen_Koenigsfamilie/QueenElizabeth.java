@@ -1,4 +1,4 @@
-package Koenigsfamilie;
+package oop_thema2_vererbungen_Koenigsfamilie;
 
 //Superklasse: George VI und Elizabeth
 public class QueenElizabeth extends Monarch {

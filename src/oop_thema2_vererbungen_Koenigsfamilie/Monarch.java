@@ -1,4 +1,4 @@
-package Koenigsfamilie;
+package oop_thema2_vererbungen_Koenigsfamilie;
 
 import java.util.Set;
 

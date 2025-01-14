@@ -1,4 +1,4 @@
-package Koenigsfamilie;
+package oop_thema2_vererbungen_Koenigsfamilie;
 
 //Subklasse: Prince Charles
 public class PrinceCharles extends QueenElizabeth {

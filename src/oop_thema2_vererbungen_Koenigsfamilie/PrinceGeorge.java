@@ -1,4 +1,4 @@
-package Koenigsfamilie;
+package oop_thema2_vererbungen_Koenigsfamilie;
 
 //Subklasse: Prince George
 public class PrinceGeorge extends PrinceWilliam {
