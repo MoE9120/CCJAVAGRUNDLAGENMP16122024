@@ -8,8 +8,8 @@ public class Hauptprogramm {
         Kunde kunde2 = new Kunde("654321", "Anna Meier", "Meierweg 2");
 
         // Kontoinformationen
-        Bankkonto konto1 = new Bankkonto("123456", "Max Mustermann", 1000.0);
-        Bankkonto konto2 = new Bankkonto("654321", "Anna Meier", 2000.0);
+        Bankkonto konto1 = new Bankkonto("123456", kunde1, 1000.0);
+        Bankkonto konto2 = new Bankkonto("654321", kunde2, 2000.0);
 
         // Aktieninformationen
         Aktie aktie1 = new Aktie("AAPL123", "Apple Inc.", 150.0);
@@ -19,7 +19,7 @@ public class Hauptprogramm {
         Darlehensvertrag darlehen = new Darlehensvertrag("D1001", kunde1, 10000.0, 5.0, 12);
 
         // Ausgabe Bank
-        System.out.println("Bank: " + Bank.Name);
+        System.out.println("Bank: " + Bank.name);
         System.out.println("Anzahl Konten: " + Bank.anzahlKonten);
         System.out.println();
 

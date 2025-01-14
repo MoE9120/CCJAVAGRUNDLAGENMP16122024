@@ -3,47 +3,49 @@ package oop_thema1_bank;
 public class Bankkonto {
 
     // Attribute
-    private String kontonummer;
-    private double kontostand;
-    private String kontoinhaber;
+    private String kontoNummer;
+    
+    private double kontoStand;
+    
+    private Kunde kontoInhaber;
 
     // Konstruktor
-    public Bankkonto(String kontonummer, String kontoinhaber, double kontostand) {
-        this.kontonummer = kontonummer;
-        this.kontoinhaber = kontoinhaber;
-        this.kontostand = kontostand;
+    public Bankkonto(String kontoNummer, Kunde kontoInhaber, double kontoStand) {
+        this.kontoNummer = kontoNummer;
+        this.kontoInhaber = kontoInhaber;
+        this.kontoStand = kontoStand;
     }
 
     // Getter und Setter
     public String getKontonummer() {
-        return kontonummer;
+        return kontoNummer;
     }
 
-    public void setKontonummer(String kontonummer) {
-        this.kontonummer = kontonummer;
+    public void setKontonummer(String kontoNummer) {
+        this.kontoNummer = kontoNummer;
     }
 
     public double getKontostand() {
-        return kontostand;
+        return kontoStand;
     }
 
-    public void setKontostand(double kontostand) {
-        this.kontostand = kontostand;
+    public void setKontostand(double kontoStand) {
+        this.kontoStand = kontoStand;
     }
 
-    public String getKontoinhaber() {
-        return kontoinhaber;
+    public Kunde getKontoinhaber() {
+        return kontoInhaber;
     }
 
-    public void setKontoinhaber(String kontoinhaber) {
-        this.kontoinhaber = kontoinhaber;
+    public void setKontoinhaber(Kunde kontoInhaber) {
+        this.kontoInhaber = kontoInhaber;
     }
 
     // Beispielmethoden
     public void einzahlen(double betrag) {
         if (betrag > 0) {
-            kontostand += betrag;
-            System.out.println("Es wurden " + betrag + " EUR eingezahlt. Neuer Kontostand: " + kontostand);
+            kontoStand += betrag;
+            System.out.println("Es wurden " + betrag + " EUR eingezahlt. Neuer Kontostand: " + kontoStand);
         } else {
             System.out.println("Ungültiger Betrag!");
         }
@@ -52,6 +54,6 @@ public class Bankkonto {
     @Override
     public String toString() {
         return String.format("Kontonummer: %s, Kontoinhaber: %s, Kontostand: %.2f EUR", 
-                              kontonummer, kontoinhaber, kontostand);
+                              kontoNummer, kontoInhaber, kontoStand);
     }
 }
