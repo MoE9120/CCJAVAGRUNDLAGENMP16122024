@@ -8,8 +8,8 @@ public class Hauptprogramm {
 		Kunde kunde2 = new Kunde("654321", "Anna Meier", "Meierweg 2");
 
 		// Kontoinformationen
-		Bankkonto konto1 = new Bankkonto("123456", kunde1, 1000.0);
-		Bankkonto konto2 = new Bankkonto("654321", kunde2, 2000.0);
+        GiroKonto giroKonto1 = new GiroKonto("123456", kunde1, 1000.0, 500.0);
+        SparKonto sparKonto1 = new SparKonto("654321", kunde2, 2000.0, 1.5);
 
 		// Aktieninformationen
 		Aktie aktie1 = new Aktie("AAPL123", "Apple Inc.", 150.0);
@@ -30,12 +30,12 @@ public class Hauptprogramm {
 		System.out.println();
 
 		// Ausgabe der Kontoinformationen
-		System.out.println("Kontoinformationen:");
-		System.out.println("Konto: " + konto1.getKontonummer() + ", Inhaber: " + konto1.getKontoinhaber()
-				+ ", Kontostand: " + konto1.getKontostand() + " EUR");
-		System.out.println("Konto: " + konto2.getKontonummer() + ", Inhaber: " + konto2.getKontoinhaber()
-				+ ", Kontostand: " + konto2.getKontostand() + " EUR");
-		System.out.println();
+        System.out.println("Kontoinformationen:");
+        System.out.println(giroKonto1);
+        System.out.println("Kann 1500 EUR abheben: " + giroKonto1.pruefeUeberziehung(1500));
+        System.out.println(sparKonto1);
+        System.out.println("Zinsen auf Sparkonto: " + sparKonto1.berechneZinsen() + " EUR");
+        System.out.println();
 
 		// Ausgabe der Aktieninformationen
 		System.out.println("Aktieninformationen:");
