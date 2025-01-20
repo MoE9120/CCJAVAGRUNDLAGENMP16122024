@@ -1,20 +1,31 @@
+// Subklasse GiroKonto
 package oop_thema1_bank;
 
-public class GiroKonto extends Bankkonto {
+public class GiroKonto extends Bankkonto implements Ueberziehbar {
 
-    private double ueberziehungsLimit; // Überziehungslimit für das Girokonto
+    private double dispoLimit;
 
-    public GiroKonto(String kontoNummer, Kunde kontoInhaber, double kontoStand, double ueberziehungsLimit) {
-        super(kontoNummer, kontoInhaber, kontoStand);
-        this.ueberziehungsLimit = ueberziehungsLimit;
+    public GiroKonto(String kontoNummer, double kontoStand, double dispoLimit) {
+        super(kontoNummer, kontoStand);
+        this.dispoLimit = dispoLimit;
     }
 
-    public boolean pruefeUeberziehung(double betrag) {
-        return (getKontostand() - betrag) >= -ueberziehungsLimit;
+    @Override
+    public boolean ueberziehungPruefen(double betrag) {
+        return (kontoStand - betrag) >= -dispoLimit;
+    }
+
+    @Override
+    public void abrechnung() {
+        if (kontoStand < 0) {
+            double gebuehr = Math.abs(kontoStand) * 0.05; // 5% Gebühr für Überziehungen
+            kontoStand -= gebuehr;
+            System.out.println("Überziehungsgebühr abgezogen: " + gebuehr + " EUR");
+        }
     }
 
     @Override
     public String toString() {
-        return super.toString() + String.format(", Überziehungslimit: %.2f EUR", ueberziehungsLimit);
+        return super.toString() + String.format(", Dispo-Limit: %.2f EUR", dispoLimit);
     }
 }
