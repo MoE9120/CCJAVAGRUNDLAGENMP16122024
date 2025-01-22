@@ -31,6 +31,11 @@ public abstract class Bankkonto {
     public String toString() {
         return String.format("Kontonummer: %s, Kontostand: %.2f EUR", kontoNummer, kontoStand);
     }
+
+	public double getZinssatz() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
 
 

@@ -26,6 +26,16 @@ public class GiroKonto extends Bankkonto implements Ueberziehbar {
 
     @Override
     public String toString() {
-        return super.toString() + String.format(", Dispo-Limit: %.2f EUR", dispoLimit);
+        return "Kontonummer: " + getKontonummer() + "\n" +
+               "Kontostand: " + String.format("%.2f", getKontostand()) + " EUR\n" +
+               "Kontotyp: GiroKonto\n" +
+               "Dispo-Limit: " + String.format("%.2f", getDispoLimit()) + " EUR\n";
     }
+
+
+
+	public String getDispoLimit() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

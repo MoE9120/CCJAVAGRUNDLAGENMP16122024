@@ -1,4 +1,3 @@
-// Subklasse SparKonto
 package oop_thema1_bank;
 
 public class SparKonto extends Bankkonto implements Zinsfaehig {
@@ -12,18 +11,31 @@ public class SparKonto extends Bankkonto implements Zinsfaehig {
 
     @Override
     public double zinsenBerechnen() {
-        return kontoStand * (zinssatz / 100);
+        return getKontostand() * (zinssatz / 100);
     }
 
     @Override
     public void abrechnung() {
         double zinsen = zinsenBerechnen();
-        kontoStand += zinsen;
-        System.out.println("Zinsen hinzugefügt: " + zinsen + " EUR");
+        setKontostand(getKontostand() + zinsen);
+        System.out.println("Zinsen hinzugefügt: " + String.format("%.2f", zinsen) + " EUR");
+    }
+
+    private void setKontostand(double d) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+    public double getZinssatz() {
+        return zinssatz; // Gibt den Zinssatz zurück
     }
 
     @Override
     public String toString() {
-        return super.toString() + String.format(", Zinssatz: %.2f%%", zinssatz);
+        return "Kontonummer: " + getKontonummer() + "\n" +
+               "Kontostand: " + String.format("%.2f", getKontostand()) + " EUR\n" +
+               "Kontotyp: SparKonto\n" +
+               "Zinssatz: " + String.format("%.2f", getZinssatz()) + "%\n";
     }
 }
